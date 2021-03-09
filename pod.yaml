@@ -1,0 +1,170 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kubernetes.io/psp: eks.privileged
+  creationTimestamp: "2021-03-06T23:39:28Z"
+  generateName: nginx-f89759699-
+  labels:
+    app: nginx
+    pod-template-hash: f89759699
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:generateName: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:pod-template-hash: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"3ebc1b36-c6be-4ab5-be29-1bc5a721d93f"}:
+            .: {}
+            f:apiVersion: {}
+            f:blockOwnerDeletion: {}
+            f:controller: {}
+            f:kind: {}
+            f:name: {}
+            f:uid: {}
+      f:spec:
+        f:containers:
+          k:{"name":"nginx"}:
+            .: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-03-06T23:39:28Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"172.31.33.254"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2021-03-06T23:39:32Z"
+  name: nginx-f89759699-p22f6
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: nginx-f89759699
+    uid: 3ebc1b36-c6be-4ab5-be29-1bc5a721d93f
+  resourceVersion: "1226649"
+  selfLink: /api/v1/namespaces/default/pods/nginx-f89759699-p22f6
+  uid: 0b174488-d008-4a76-a42e-6676b2fccae3
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: Always
+    name: nginx
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-t8v8j
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: ip-172-31-37-15.ec2.internal
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-t8v8j
+    secret:
+      defaultMode: 420
+      secretName: default-token-t8v8j
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-03-06T23:39:28Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-03-06T23:39:32Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-03-06T23:39:32Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-03-06T23:39:28Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://29e519b09362ff44d400336f7f3612fb6362cd1c42f87a668779b727f83a2c44
+    image: nginx:latest
+    imageID: docker-pullable://nginx@sha256:f3693fe50d5b1df1ecd315d54813a77afd56b0245a404055a946574deb6b34fc
+    lastState: {}
+    name: nginx
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2021-03-06T23:39:32Z"
+  hostIP: 172.31.37.15
+  phase: Running
+  podIP: 172.31.33.254
+  podIPs:
+  - ip: 172.31.33.254
+  qosClass: BestEffort
+  startTime: "2021-03-06T23:39:28Z"
